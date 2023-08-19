@@ -1,5 +1,82 @@
-{\rtf1\ansi\ansicpg1252\cocoartf949
-{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red93\green108\blue121;\red255\green255\blue255;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c36526\c42188\c47515;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c0\c0\c0\c85000;
+}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\pard\tx247\pardeftab247\partightenfactor0
+
+\f1\fs20 \cf2 \cb3 \
+\
+\
+\
+// steps1: Check url is working\cf4 \
+\cf2 // step2 : Check response json is valid
+\f0\fs24 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+// Step 1:  Check url is working on browser\
+chrome just past url if its open without header other wise postman.\
+// Step 2:  Check response json is Valid json checker \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 https://app.quicktype.io/\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+// Step 3: Create Models\
+\
+https://app.quicktype.io/\
+\
+struct FoodOutlet: Codable \{\
+    // Define your model properties here\
+\}\
+\
+// Step 4: Create Client API Manager\
+class ClientAPIManager \{\
+    // Define your API request functions here\
+\}\
+\
+// Step 5: Create Progress Loader Start/Stop\
+// Implement loading indicators if needed\
+\
+// Step 6: API Request Handler\
+class ClientAPIManager \{\
+    func makeAPIRequest(urlString: String, completion: @escaping APICompletion) \{\
+        // Construct the URL\
+        // Call the API using a networking library\
+    \}\
+\}\
+\
+// Step 7: API Response Handler\
+class ClientAPIManager \{\
+    func handleAPIResponse(data: Data, completion: @escaping APICompletion) \{\
+        // Parse the response data\
+        // Call the appropriate completion handler\
+    \}\
+\}\
+\
+// Step 8: Convert Completion Type Aliases\
+typealias APICompletion = (Result<FoodOutlet, APIError>) -> Void\
+\
+// Step 9: Error Handling\
+enum APIError: Error \{\
+    // Define error cases here\
+\}\
+\
+// Step 10: Call the API from Controller\
+let apiManager = ClientAPIManager()\
+let apiUrlString = "your_api_url_here"\
+\
+apiManager.makeAPIRequest(urlString: apiUrlString) \{ result in\
+    switch result \{\
+    case .success(let foodOutlet):\
+        // Handle the successful response\
+    case .failure(let error):\
+        // Handle the error\
+    \}\
+\}\
 }
