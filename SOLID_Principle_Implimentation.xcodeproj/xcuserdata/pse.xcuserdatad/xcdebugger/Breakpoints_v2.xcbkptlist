@@ -3,4 +3,102 @@
    uuid = "97629E69-3000-4A91-858E-AE44EF7D2667"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8A34C94-DED5-415A-B36D-41EBDB7D3C97"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLID_Principle_Implimentation/ApiManager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "parseModels(data:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B8A34C94-DED5-415A-B36D-41EBDB7D3C97 - 63cfa2654bb94770"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLID_Principle_Implimentation.ResponseHandler.parseModels&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(data: Foundation.Data, completion: (Swift.Result&lt;&#x3c4;_0_0, SOLID_Principle_Implimentation.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SOLID_Principle_Implimentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pse/Documents/Documents%20-%20Muhammad%20MacBook%20Pro/KamQasim/Development/Interview_Preperation/SOLID_Principle_Implimentation/SOLID_Principle_Implimentation/ApiManager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1336">
+               </Location>
+               <Location
+                  uuid = "B8A34C94-DED5-415A-B36D-41EBDB7D3C97 - 63cfa2654bb94770"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLID_Principle_Implimentation.ResponseHandler.parseModels&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(data: Foundation.Data, completion: (Swift.Result&lt;&#x3c4;_0_0, SOLID_Principle_Implimentation.APIError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SOLID_Principle_Implimentation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pse/Documents/Documents%20-%20Muhammad%20MacBook%20Pro/KamQasim/Development/Interview_Preperation/SOLID_Principle_Implimentation/SOLID_Principle_Implimentation/ApiManager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "916">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB132542-51EC-406C-893C-BE4F182D054E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLID_Principle_Implimentation/ApiManager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "parseModels(data:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AABCB59-ED79-40FD-BC62-3F43F07F379B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLID_Principle_Implimentation/ApiManager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "showAlert(type:style:title:titleFont:titleFontSize:message:messageFont:messageFontSize:cornerRadius:imagePosition:buttonsPosition:image:buttons:autoDismissTimer:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AAE2A02-9006-41D5-8CA5-919451A129D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLID_Principle_ImplimentationTests/SOLID_Principle_ImplimentationTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "cellViewModel(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

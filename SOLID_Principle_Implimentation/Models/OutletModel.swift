@@ -26,9 +26,5 @@ struct UserRating: Codable {
   let averageRating: Double
   let votes: Int
 }
-  // MARK: - FoodOutletError
-enum FoodOutletError: Error {
-  case networkError(Error)
-  case decodingError(Error)
-  case noDataError(Error)
-}
+
+

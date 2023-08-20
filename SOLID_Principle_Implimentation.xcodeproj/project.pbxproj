@@ -11,7 +11,7 @@
 		5D0553092A90293600A7360E /* OutletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0553082A90293600A7360E /* OutletModel.swift */; };
 		5D2B13E32A8FE68F00961B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B13E22A8FE68F00961B1F /* AppDelegate.swift */; };
 		5D2B13E52A8FE68F00961B1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B13E42A8FE68F00961B1F /* SceneDelegate.swift */; };
-		5D2B13E72A8FE68F00961B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B13E62A8FE68F00961B1F /* ViewController.swift */; };
+		5D2B13E72A8FE68F00961B1F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B13E62A8FE68F00961B1F /* HomeVC.swift */; };
 		5D2B13EA2A8FE68F00961B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B13E82A8FE68F00961B1F /* Main.storyboard */; };
 		5D2B13EC2A8FE6B300961B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B13EB2A8FE6B300961B1F /* Assets.xcassets */; };
 		5D2B13EF2A8FE6B300961B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2B13ED2A8FE6B300961B1F /* LaunchScreen.storyboard */; };
@@ -19,6 +19,11 @@
 		5D2B14042A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B14032A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITests.swift */; };
 		5D2B14062A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B14052A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITestsLaunchTests.swift */; };
 		5DB8D1F22A90E20A00E50077 /* Readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5DB8D1F12A90E20A00E50077 /* Readme.rtf */; };
+		5DB8D1F92A90E65100E50077 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D1F82A90E65100E50077 /* AppServices.swift */; };
+		5DB8D1FD2A90E8BC00E50077 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D1FC2A90E8BC00E50077 /* UserModel.swift */; };
+		5DB8D1FF2A90F58700E50077 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */; };
+		5DB8D2012A91229A00E50077 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D2002A91229A00E50077 /* ReachabilityManager.swift */; };
+		5DB8D2042A91263B00E50077 /* NetworkReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5DB8D2032A91263B00E50077 /* NetworkReachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +49,7 @@
 		5D2B13DF2A8FE68F00961B1F /* SOLID_Principle_Implimentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLID_Principle_Implimentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2B13E22A8FE68F00961B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D2B13E42A8FE68F00961B1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D2B13E62A8FE68F00961B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D2B13E62A8FE68F00961B1F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5D2B13E92A8FE68F00961B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D2B13EB2A8FE6B300961B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D2B13EE2A8FE6B300961B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +60,10 @@
 		5D2B14032A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLID_Principle_ImplimentationUITests.swift; sourceTree = "<group>"; };
 		5D2B14052A8FE6B600961B1F /* SOLID_Principle_ImplimentationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLID_Principle_ImplimentationUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5DB8D1F12A90E20A00E50077 /* Readme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Readme.rtf; sourceTree = "<group>"; };
+		5DB8D1F82A90E65100E50077 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		5DB8D1FC2A90E8BC00E50077 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5DB8D2002A91229A00E50077 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DB8D2042A91263B00E50077 /* NetworkReachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				5D0553062A8FEECB00A7360E /* NetworkManager.swift */,
+				5DB8D1F82A90E65100E50077 /* AppServices.swift */,
+				5DB8D2002A91229A00E50077 /* ReachabilityManager.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -146,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				5D0553082A90293600A7360E /* OutletModel.swift */,
+				5DB8D1FC2A90E8BC00E50077 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,7 +166,8 @@
 		5DB8D1F42A90E33E00E50077 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5D2B13E62A8FE68F00961B1F /* ViewController.swift */,
+				5D2B13E62A8FE68F00961B1F /* HomeVC.swift */,
+				5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +214,9 @@
 			dependencies = (
 			);
 			name = SOLID_Principle_Implimentation;
+			packageProductDependencies = (
+				5DB8D2032A91263B00E50077 /* NetworkReachability */,
+			);
 			productName = SOLID_Principle_Implimentation;
 			productReference = 5D2B13DF2A8FE68F00961B1F /* SOLID_Principle_Implimentation.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +289,9 @@
 				Base,
 			);
 			mainGroup = 5D2B13D62A8FE68F00961B1F;
+			packageReferences = (
+				5DB8D2022A91263B00E50077 /* XCRemoteSwiftPackageReference "NetworkReachability" */,
+			);
 			productRefGroup = 5D2B13E02A8FE68F00961B1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,9 +337,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D0553072A8FEECB00A7360E /* NetworkManager.swift in Sources */,
-				5D2B13E72A8FE68F00961B1F /* ViewController.swift in Sources */,
+				5DB8D1FD2A90E8BC00E50077 /* UserModel.swift in Sources */,
+				5D2B13E72A8FE68F00961B1F /* HomeVC.swift in Sources */,
+				5DB8D1FF2A90F58700E50077 /* HomeViewModel.swift in Sources */,
+				5DB8D2012A91229A00E50077 /* ReachabilityManager.swift in Sources */,
 				5D2B13E32A8FE68F00961B1F /* AppDelegate.swift in Sources */,
 				5D2B13E52A8FE68F00961B1F /* SceneDelegate.swift in Sources */,
+				5DB8D1F92A90E65100E50077 /* AppServices.swift in Sources */,
 				5D0553092A90293600A7360E /* OutletModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,7 +586,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KamsQue.SOLID-Principle-ImplimentationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,7 +606,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KamsQue.SOLID-Principle-ImplimentationTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,6 +625,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KamsQue.SOLID-Principle-ImplimentationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -619,6 +644,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CT7H96YF74;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "KamsQue.SOLID-Principle-ImplimentationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -669,6 +695,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DB8D2022A91263B00E50077 /* XCRemoteSwiftPackageReference "NetworkReachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vsanthanam/NetworkReachability.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DB8D2032A91263B00E50077 /* NetworkReachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DB8D2022A91263B00E50077 /* XCRemoteSwiftPackageReference "NetworkReachability" */;
+			productName = NetworkReachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D2B13D72A8FE68F00961B1F /* Project object */;
 }

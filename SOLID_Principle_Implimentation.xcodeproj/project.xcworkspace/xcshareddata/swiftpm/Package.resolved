@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networkreachability",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vsanthanam/NetworkReachability.git",
+      "state" : {
+        "revision" : "d70fc48b113eaf2a0b68235aaee95f3a060afd00",
+        "version" : "1.5.0"
+      }
+    }
+  ],
+  "version" : 2
+}
