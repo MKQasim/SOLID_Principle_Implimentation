@@ -18,6 +18,21 @@ protocol HomeViewModelDelegate {
   func fetchUsers(completion: @escaping UserCompletion) async
   func fetchOutlets(completion: @escaping OutletCompletion) async
   func cellViewModel(for indexPath: IndexPath) -> UserCellViewModel
+  
+    // Optional methods for testing scenarios
+  func fetchEmptyUsers(completion: @escaping UserCompletion) async
+  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async
+}
+
+extension HomeViewModelDelegate {
+    // Default implementation for optional methods
+  func fetchEmptyUsers(completion: @escaping UserCompletion) async {
+      // Implement the empty user scenario here
+  }
+  
+  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async {
+      // Implement the empty outlet scenario here
+  }
 }
 
 class HomeViewModel: HomeViewModelDelegate {
@@ -70,75 +85,4 @@ class HomeViewModel: HomeViewModelDelegate {
   }
 }
 
-  // Type Aliases for Completions
-typealias UserCompletion = (Result<[User], APIError>) -> Void
-typealias OutletCompletion = (Result<Outlet, APIError>) -> Void
-
-  // UserViewModel Delegate
-protocol UserViewModelDelegate {
-  var users: [User] { get set }
-  func fetchUsers(completion: @escaping UserCompletion) async
-}
-
-  // UserViewModel
-public class UserViewModel: UserViewModelDelegate {
-  var users: [User] = []
-  let userServices = UserServices()
-  
-  func fetchUsers(completion: @escaping UserCompletion) async {
-    await fetchData(service: userServices, completion: completion)
-  }
-  
-  private func fetchData(service: UserServices, completion: @escaping UserCompletion) async {
-    await service.fetchUsers { result in
-      switch result {
-      case .success(let users):
-        self.users = users
-        completion(.success(users))
-      case .failure(let error):
-        self.handleFailure(completion: completion, error: error)
-      }
-    }
-  }
-  
-  private func handleFailure(completion: @escaping UserCompletion, error: APIError) {
-    DispatchQueue.main.async {
-        // Handle failure on the main queue
-      completion(.failure(error))
-    }
-  }
-}
-
-  // OutletViewModel Delegate
-protocol OutletViewModelDelegate {
-  func fetchOutlets(completion: @escaping OutletCompletion) async
-}
-
-  // OutletViewModel
-class OutletViewModel: OutletViewModelDelegate {
-  let outletServices = OutletServices()
-  
-  func fetchOutlets(completion: @escaping OutletCompletion) async {
-    await fetchData(service: outletServices, completion: completion)
-  }
-  
-  private func fetchData(service: OutletServices, completion: @escaping OutletCompletion) async {
-    await service.fetchOutlets { result in
-      switch result {
-      case .success(let outlet):
-        completion(.success(outlet))
-      case .failure(let error):
-        self.handleFailure(completion: completion, error: error)
-      }
-    }
-  }
-  
-  private func handleFailure(completion: @escaping OutletCompletion, error: APIError) {
-    DispatchQueue.main.async {
-        // Handle failure on the main queue
-      completion(.failure(error))
-    }
-  }
-  
-}
 

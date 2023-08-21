@@ -9,6 +9,7 @@ import Foundation
 
   // MARK: - Outlet
 struct Outlet: Codable {
+  
   let page, perPage, total, totalPages: Int
   let data: [Datum]
 }
@@ -28,3 +29,13 @@ struct UserRating: Codable {
 }
 
 
+extension Outlet: Equatable {
+  static func == (lhs: Outlet, rhs: Outlet) -> Bool {
+      // Compare the properties of lhs and rhs here
+    return lhs.page == rhs.page &&
+    lhs.perPage == rhs.perPage &&
+    lhs.total == rhs.total &&
+    lhs.totalPages == rhs.totalPages
+//    lhs.data == rhs.data
+  }
+}
