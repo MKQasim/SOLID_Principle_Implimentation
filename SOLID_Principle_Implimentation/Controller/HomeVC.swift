@@ -136,17 +136,3 @@ extension HomeVC {
     view.showAlert(type: type, title: title, message: message, imagePosition : .top, autoDismissTimer: autoDismissTimer)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
