@@ -24,17 +24,6 @@ protocol HomeViewModelDelegate {
 //  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async
 }
 
-//extension HomeViewModelDelegate {
-//    // Default implementation for optional methods
-//  func fetchEmptyUsers(completion: @escaping UserCompletion) async {
-//      // Implement the empty user scenario here
-//  }
-//  
-//  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async {
-//      // Implement the empty outlet scenario here
-//  }
-//}
-
 class HomeViewModel: HomeViewModelDelegate {
  
   var users: [User] = []

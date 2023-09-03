@@ -36,22 +36,6 @@ class HomeViewModelMock: HomeViewModelDelegate {
     completion(.success(outlet))
   }
   
-    // Default implementation for optional methods
-//  func fetchEmptyUsers(completion: @escaping UserCompletion) async {
-//      // Implement the empty user scenario here
-//    self.users = [] // Simulate an empty list of users
-//    completion(.success([]))
-//   
-//  }
-//  
-//  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async {
-//      // Implement the empty outlet scenario here
-//    let emptyOutletData: [Datum] = []
-//    let emptyOutlet = Outlet(page: 1, perPage: 10, total: 0, totalPages: 0, data: emptyOutletData)
-//    completion(.success(nil))
-//  }
-
-  
   func cellViewModel(for indexPath: IndexPath) -> SOLID_Principle_Implimentation.UserCellViewModel {
  
     let user = users[indexPath.row]
