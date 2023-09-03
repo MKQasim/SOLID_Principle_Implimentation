@@ -28,6 +28,7 @@
 		5DB8D1FF2A90F58700E50077 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */; };
 		5DB8D2012A91229A00E50077 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8D2002A91229A00E50077 /* ReachabilityManager.swift */; };
 		5DB8D2042A91263B00E50077 /* NetworkReachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5DB8D2032A91263B00E50077 /* NetworkReachability */; };
+		5DDDF5322AA49F8800161308 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDF5312AA49F8800161308 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5DB8D1FC2A90E8BC00E50077 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5DB8D2002A91229A00E50077 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		5DDDF5312AA49F8800161308 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				5DB8D1FE2A90F58700E50077 /* HomeViewModel.swift */,
 				5D3A75BB2A936FD100BBF82D /* UserViewModel.swift */,
 				5D3A75BD2A93700A00BBF82D /* OutletViewModel.swift */,
+				5DDDF5312AA49F8800161308 /* ViewExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				5D2B13E32A8FE68F00961B1F /* AppDelegate.swift in Sources */,
 				5D2B13E52A8FE68F00961B1F /* SceneDelegate.swift in Sources */,
 				5D3A75BA2A936A6600BBF82D /* APIErrorHelper.swift in Sources */,
+				5DDDF5322AA49F8800161308 /* ViewExtension.swift in Sources */,
 				5D3A75BE2A93700A00BBF82D /* OutletViewModel.swift in Sources */,
 				5DB8D1F92A90E65100E50077 /* AppServices.swift in Sources */,
 				5D0553092A90293600A7360E /* OutletModel.swift in Sources */,

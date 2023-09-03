@@ -20,6 +20,7 @@ import UIKit
 
 
 class HomeVC: UIViewController {
+  
   @IBOutlet weak var tableView: UITableView!
   
   var vm: HomeViewModelDelegate!
@@ -84,12 +85,13 @@ extension HomeVC: UITableViewDelegate {
 extension HomeVC {
   
   private func fetchUsers() async {
-    view.showSpinner()
+    showSpinner()
     await vm.fetchUsers { [weak self] result in
       switch result {
       case .success(_):
         DispatchQueue.main.async {
           self?.tableView.reloadData()
+          self?.hideSpinner()
         }
       case .failure(let error):
         self?.handleError(error)
@@ -98,12 +100,12 @@ extension HomeVC {
   }
   
   func fetchOutlets() async{
-    view.showSpinner()
+    showSpinner()
     await vm.fetchOutlets { [weak self] result in
       switch result {
       case .success(_):
         DispatchQueue.main.async {
-          self?.view.hideSpinner()
+          self?.hideSpinner()
         }
       case .failure(let error):
         self?.handleError(error)

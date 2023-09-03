@@ -20,17 +20,19 @@ class HomeViewModelMock: HomeViewModelDelegate {
     let user1 = User(login: "user1", id: 1, nodeID: "node1", avatarURL: "avatar1", gravatarID: "gravatar1", url: "url1", htmlURL: "html1", followersURL: "followers1", followingURL: "following1", gistsURL: "gists1", starredURL: "starred1", subscriptionsURL: "subscriptions1", organizationsURL: "organizations1", reposURL: "repos1", eventsURL: "events1", receivedEventsURL: "receivedEvents1", type: .user, siteAdmin: true)
     
     let user2 = User(login: "user2", id: 2, nodeID: "node2", avatarURL: "avatar2", gravatarID: "gravatar2", url: "url2", htmlURL: "html2", followersURL: "followers2", followingURL: "following2", gistsURL: "gists2", starredURL: "starred2", subscriptionsURL: "subscriptions2", organizationsURL: "organizations2", reposURL: "repos2", eventsURL: "events2", receivedEventsURL: "receivedEvents2", type: .user, siteAdmin: false)
+    self.users = [user1, user2]
     self.numberOfSections = users.count > 0 ? 1 : 0
     self.numberOfRows = users.count
-    self.users = [user1, user2]
     completion(.success(users))
   }
 
   func fetchOutlets(completion: @escaping OutletCompletion) async {
+    
     let outlet = Outlet(page: 1, perPage: 10, total: 50, totalPages: 5, data: [
       Datum(city: "City1", name: "Outlet 1", estimatedCost: 50, userRating: UserRating(averageRating: 4.5, votes: 100), id: 1),
       Datum(city: "City2", name: "Outlet 2", estimatedCost: 40, userRating: UserRating(averageRating: 4.2, votes: 85), id: 2)
     ])
+  
     completion(.success(outlet))
   }
   
@@ -46,7 +48,7 @@ class HomeViewModelMock: HomeViewModelDelegate {
       // Implement the empty outlet scenario here
     let emptyOutletData: [Datum] = []
     let emptyOutlet = Outlet(page: 1, perPage: 10, total: 0, totalPages: 0, data: emptyOutletData)
-    completion(.success(emptyOutlet))
+    completion(.success(nil))
   }
 
   
@@ -123,7 +125,7 @@ class HomeViewModelTests: XCTestCase {
       completion(.success(emptyOutlet))
     }
     
-    await homeViewModel.fetchOutlets { result in
+    await homeViewModel.fetchEmptyOutlets { result in
       switch result {
       case .success(let outlet):
         

@@ -12,6 +12,7 @@ protocol UserViewModelDelegate {
   var users: [User] { get set }
   func fetchUsers(completion: @escaping UserCompletion) async
 }
+
   // UserViewModel
 public class UserViewModel: UserViewModelDelegate {
   var users: [User] = []
