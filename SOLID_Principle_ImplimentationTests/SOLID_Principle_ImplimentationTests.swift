@@ -37,19 +37,19 @@ class HomeViewModelMock: HomeViewModelDelegate {
   }
   
     // Default implementation for optional methods
-  func fetchEmptyUsers(completion: @escaping UserCompletion) async {
-      // Implement the empty user scenario here
-    self.users = [] // Simulate an empty list of users
-    completion(.success([]))
-   
-  }
-  
-  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async {
-      // Implement the empty outlet scenario here
-    let emptyOutletData: [Datum] = []
-    let emptyOutlet = Outlet(page: 1, perPage: 10, total: 0, totalPages: 0, data: emptyOutletData)
-    completion(.success(nil))
-  }
+//  func fetchEmptyUsers(completion: @escaping UserCompletion) async {
+//      // Implement the empty user scenario here
+//    self.users = [] // Simulate an empty list of users
+//    completion(.success([]))
+//   
+//  }
+//  
+//  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async {
+//      // Implement the empty outlet scenario here
+//    let emptyOutletData: [Datum] = []
+//    let emptyOutlet = Outlet(page: 1, perPage: 10, total: 0, totalPages: 0, data: emptyOutletData)
+//    completion(.success(nil))
+//  }
 
   
   func cellViewModel(for indexPath: IndexPath) -> SOLID_Principle_Implimentation.UserCellViewModel {
@@ -125,7 +125,7 @@ class HomeViewModelTests: XCTestCase {
       completion(.success(emptyOutlet))
     }
     
-    await homeViewModel.fetchEmptyOutlets { result in
+    await (outletViewModel as! OutletViewModelDelegateMock).fetchOutlets { result in
       switch result {
       case .success(let outlet):
         
@@ -222,185 +222,3 @@ class HomeViewModelTests: XCTestCase {
     await fulfillment(of: [expectation], timeout: 5)
   }
 }
-
-
-//class HomeViewModelTests: XCTestCase {
-//  
-//  var userViewModel: UserViewModelDelegate!
-//  var outletViewModel: OutletViewModelDelegate!
-//  var homeViewModel: HomeViewModelDelegate! // Corrected type
-//  
-//  override func setUpWithError() throws {
-//    userViewModel = UserViewModelDelegateMock()
-//    outletViewModel = OutletViewModelDelegateMock()
-//    homeViewModel = HomeViewModelMock()
-//  }
-//  
-//  func testFetchUsers() async {
-//    let expectation = XCTestExpectation(description: "Fetch users expectation")
-//    
-//    await (homeViewModel).fetchUsers { result in
-//      switch result {
-//      case .success(let users):
-//        XCTAssertEqual(users.count, 2) // Assuming the mock implementation returns 2 users
-//      case .failure:
-//        XCTFail("Should not fail")
-//      }
-//      expectation.fulfill()
-//    }
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//  
-//  func testFetchOutlets() async {
-//    let expectation = XCTestExpectation(description: "Fetch outlets expectation")
-//    
-//    await (homeViewModel as! HomeViewModelMock).fetchOutlets { result in
-//      switch result {
-//      case .success(let outlet):
-//        XCTAssertEqual(outlet.data.count, 2) // Assuming the mock implementation returns 2 outlets
-//        XCTAssertEqual(outlet.data[0].name, "Outlet 1") // Assuming the name of the first outlet is "Outlet 1"
-//      case .failure:
-//        XCTFail("Should not fail")
-//      }
-//      expectation.fulfill()
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//  
-//  func testNumberOfSections() async {
-//    let expectation = XCTestExpectation(description: "Fetch users")
-//    
-//    await homeViewModel.fetchUsers { [weak self] result in
-//      guard let self = self else {
-//        return
-//      }
-//      
-//      if case .success = result {
-//        XCTAssertEqual(self.homeViewModel.numberOfSections, 1)
-//        expectation.fulfill()
-//      }
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//  
-//  func testNumberOfRows() async {
-//    let expectation = XCTestExpectation(description: "Fetch users")
-//    
-//    await homeViewModel.fetchUsers { [weak self] result in
-//      guard let self = self else {
-//        return
-//      }
-//      
-//      if case .success = result {
-//        XCTAssertEqual(self.homeViewModel.numberOfRows, 2) // Assuming the mock implementation has 2 users
-//        expectation.fulfill()
-//      }
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//
-//  
-//  func testCellViewModelForIndexPath() async {
-//    let expectation = XCTestExpectation(description: "Fetch users")
-//    
-//    await homeViewModel.fetchUsers { [weak self] result in
-//      guard let self = self else {
-//        return
-//      }
-//      
-//      if case .success = result {
-//          // Assuming the mock implementation returns 2 users
-//        XCTAssertEqual(self.homeViewModel.numberOfRows, 2)
-//        
-//        let indexPath = IndexPath(row: 0, section: 0)
-//        let cellViewModel = self.homeViewModel.cellViewModel(for: indexPath)
-//        XCTAssertEqual(cellViewModel.user.login, "user1")
-//        
-//        expectation.fulfill()
-//      }
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//  
-//  func testEmptyUserList() async {
-//    let expectation = XCTestExpectation(description: "Fetch users expectation")
-//    userViewModel.users = [] // Simulate an empty list of users
-//    
-//    await homeViewModel.fetchUsers { result in
-//      switch result {
-//      case .success(let users):
-//        XCTAssertEqual(users.count, 0) // Should be 0
-//        XCTAssertEqual(self.homeViewModel.numberOfRows, 0) // Should also be 0
-//      case .failure:
-//        XCTFail("Should not fail")
-//      }
-//      expectation.fulfill()
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//  
-//  func testEmptyOutletList() async {
-//    let expectation = XCTestExpectation(description: "Fetch outlets expectation")
-//    
-//      // Simulate an empty list of outlets
-//    let emptyOutletData: [Datum] = []
-//    let emptyOutlet = Outlet(page: 1, perPage: 10, total: 0, totalPages: 0, data: emptyOutletData)
-//    
-//      // Stub the outletViewModel to return the empty outlet data
-//    (outletViewModel as! OutletViewModelDelegateMock).fetchOutlets = { completion in
-//      completion(.success(emptyOutlet))
-//    }
-//    
-//    await homeViewModel.fetchOutlets { result in
-//      switch result {
-//      case .success(let outlet):
-//        XCTAssertEqual(outlet.data.count, 0) // Should be 0
-//      case .failure:
-//        XCTFail("Should not fail")
-//      }
-//      expectation.fulfill()
-//    }
-//    
-//    await fulfillment(of: [expectation], timeout: 5)
-//  }
-//
-//  
-////  func testInvalidUserDataFormat() async {
-////    let expectation = XCTestExpectation(description: "Fetch users expectation")
-////    userViewModel.users = [] // Simulate an empty list of users with invalid format
-////    
-////    await homeViewModel.fetchUsers { result in
-////      switch result {
-////      case .success:
-////        XCTFail("Should not succeed with invalid data format")
-////      case .failure(let error):
-////        XCTAssertEqual(error, .invalidDataFormat) // Assuming you have an error enum
-////      }
-////      expectation.fulfill()
-////    }
-////    
-////    await fulfillment(of: [expectation], timeout: 5)
-////  }
-////  
-////  func testNetworkFailure() async {
-////    let expectation = XCTestExpectation(description: "Fetch users expectation")
-////    userViewModel.fetchUsersCompletionResult = .failure(.networkError) // Simulate network failure
-////    
-////    await homeViewModel.fetchUsers { result in
-////      switch result {
-////      case .success:
-////        XCTFail("Should not succeed with network failure")
-////      case .failure(let error):
-////        XCTAssertEqual(error, .networkError) // Assuming you have an error enum
-////      }
-////      expectation.fulfill()
-////    }
-////    
-////    await fulfillment(of: [expectation], timeout: 5)
-////  }
-//}
