@@ -20,7 +20,7 @@ struct User: Codable , Equatable{
   let subscriptionsURL, organizationsURL, reposURL: String?
   let eventsURL: String?
   let receivedEventsURL: String?
-  let type: TypeEnum
+  let type: TypeEnum?
   let siteAdmin: Bool?
   
   enum CodingKeys: String, CodingKey {

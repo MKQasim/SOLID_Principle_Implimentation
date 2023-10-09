@@ -18,19 +18,13 @@ protocol HomeViewModelDelegate {
   func fetchUsers(completion: @escaping UserCompletion) async
   func fetchOutlets(completion: @escaping OutletCompletion) async
   func cellViewModel(for indexPath: IndexPath) -> UserCellViewModel
-  
-//    // Optional methods for testing scenarios
-//  func fetchEmptyUsers(completion: @escaping UserCompletion) async
-//  func fetchEmptyOutlets(completion: @escaping OutletCompletion) async
 }
 
 class HomeViewModel: HomeViewModelDelegate {
  
   var users: [User] = []
-  
   let userViewModel: UserViewModelDelegate // Use the protocol type here
   let outletViewModel: OutletViewModelDelegate // Use the protocol type here
-  
   init(userViewModel: UserViewModelDelegate, outletViewModel: OutletViewModelDelegate) { // Use the protocol type here
     self.userViewModel = userViewModel
     self.outletViewModel = outletViewModel
@@ -65,7 +59,7 @@ class HomeViewModel: HomeViewModelDelegate {
     await userViewModel.fetchUsers { result in
       switch result {
       case .success(let users):
-        self.users = users
+        self.users = users ?? []
         completion(.success(users))
       case .failure(let error):
         completion(.failure(error))

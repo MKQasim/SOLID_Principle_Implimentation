@@ -7,7 +7,25 @@
 		<key>SOLID_Principle_Implimentation.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5D2B13DE2A8FE68F00961B1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D2B13F42A8FE6B500961B1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D2B13FE2A8FE6B500961B1F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

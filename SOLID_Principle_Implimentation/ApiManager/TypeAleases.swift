@@ -8,5 +8,5 @@
 import Foundation
 
   // Type Aliases for Completions
-typealias UserCompletion = (Result<[User], APIError>) -> Void
+typealias UserCompletion = (Result<[User]?, APIError>) -> Void
 typealias OutletCompletion = (Result<Outlet?, APIError>) -> Void

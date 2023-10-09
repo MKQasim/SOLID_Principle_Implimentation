@@ -11,6 +11,8 @@ import Foundation
 protocol OutletViewModelDelegate {
   var outlet: Outlet? { get set }
   func fetchOutlets(completion: @escaping OutletCompletion) async
+  func fetchData(service: OutletServices, completion: @escaping OutletCompletion) async
+  func handleFailure(completion: @escaping OutletCompletion, error: APIError)
 }
 
   // OutletViewModel
@@ -23,7 +25,7 @@ class OutletViewModel: OutletViewModelDelegate {
     await fetchData(service: outletServices, completion: completion)
   }
   
-  private func fetchData(service: OutletServices, completion: @escaping OutletCompletion) async {
+  func fetchData(service: OutletServices, completion: @escaping OutletCompletion) async {
     await service.fetchOutlets { result in
       switch result {
       case .success(let outlet):
@@ -35,11 +37,10 @@ class OutletViewModel: OutletViewModelDelegate {
     }
   }
   
-  private func handleFailure(completion: @escaping OutletCompletion, error: APIError) {
+   func handleFailure(completion: @escaping OutletCompletion, error: APIError) {
     DispatchQueue.main.async {
         // Handle failure on the main queue
       APIErrorHelper.handleAPIError(completion: completion, error: error)
     }
   }
-  
 }

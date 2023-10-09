@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkReachability
 
 
 
@@ -18,25 +19,47 @@ protocol OutletServicesDelegate {
 }
 
 class UserServices: UserServicesDelegate {
-  
-  let apiManager = ApiManager()
-  let baseURL = "https://api.github.com/users"
-  
-  func fetchUsers(completion: @escaping UserCompletion) async {
-    await apiManager.request(urlString: baseURL) { result in
-      completion(result)
+    let apiManager: ApiManager
+
+    init() {
+        let networkReachabilityManager = NetworkMonitor()
+        let reqHandler = RequestHandler()
+        let responseHandler = ResponseHandler()
+        apiManager = ApiManager(
+            networkReachabilityManager: networkReachabilityManager ,
+            reqHandler: reqHandler,
+            responseHandler: responseHandler
+        )
     }
-  }
+
+    let baseURL = "https://api.github.com/users"
+  
+    func fetchUsers(completion: @escaping UserCompletion) async {
+        await apiManager.request(urlString: baseURL) { result in
+            completion(result)
+        }
+    }
 }
 
 class OutletServices: OutletServicesDelegate {
-  
-  let apiManager = ApiManager()
-  let baseURL = "https://jsonmock.hackerrank.com/api/food_outlets?city=seattle&page=1"
-  
-  func fetchOutlets(completion: @escaping OutletCompletion) async {
-    await apiManager.request(urlString: baseURL) { result in
-      completion(result)
+    let apiManager: ApiManager
+
+    init() {
+        let networkReachabilityManager = NetworkMonitor()
+        let reqHandler = RequestHandler()
+        let responseHandler = ResponseHandler()
+        apiManager = ApiManager(
+            networkReachabilityManager: networkReachabilityManager ,
+            reqHandler: reqHandler,
+            responseHandler: responseHandler
+        )
     }
-  }
+
+    let baseURL = "https://jsonmock.hackerrank.com/api/food_outlets?city=seattle&page=1"
+  
+    func fetchOutlets(completion: @escaping OutletCompletion) async {
+        await apiManager.request(urlString: baseURL) { result in
+            completion(result)
+        }
+    }
 }
